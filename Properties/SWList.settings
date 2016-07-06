@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="JobControlCenter.Properties" GeneratedClassName="SWList">
+  <Profiles />
+  <Settings>
+    <Setting Name="Basic" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Basic</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
