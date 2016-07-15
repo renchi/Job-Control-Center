@@ -18,7 +18,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock>Enter new sandbox details</TextBlock>
-        <TextBox wpf:HintAssist.Hint="Name" Style="{DynamicResource MaterialDesignFloatingHintTextBox}"                 
+        <TextBox Name="txtSandboxName" wpf:HintAssist.Hint="Name" Style="{DynamicResource MaterialDesignFloatingHintTextBox}"                 
                  Margin="0 6 0 0"
                  FontSize="16" Grid.Row="1">
             <TextBox.Text>
@@ -29,7 +29,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox wpf:HintAssist.Hint="Path" Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
+        <TextBox Name="txtSandboxPath" wpf:HintAssist.Hint="Path" Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
                  Margin="0 8 0 0"
                  FontSize="12" Grid.Row="2">
             <TextBox.Text>
@@ -40,7 +40,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <CheckBox Grid.Row="3" Margin="0 20 0 0" Style="{StaticResource MaterialDesignCheckBox}">Export restricted</CheckBox>
+        <CheckBox Name="chkExportControl" Grid.Row="3" Margin="0 20 0 0" Style="{StaticResource MaterialDesignCheckBox}">Export restricted</CheckBox>
 
         <StackPanel Orientation="Horizontal" Grid.Row="4"
                     Margin="0 16 0 0">

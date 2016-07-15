@@ -3,3 +3,7 @@ obj/Release/PaletteSelector.g.i.cs
 .vs/JobControlCenter/v14/.suo
 *.suo
 *.suo
+*.exe
+*.dll
+*.pdb
+*.application

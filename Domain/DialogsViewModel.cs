@@ -11,17 +11,17 @@ namespace JobControlCenter.Domain
 {
     public class DialogsViewModel : INotifyPropertyChanged
     {
+
         public DialogsViewModel()
         {
         }
 
         public ICommand RunDialogCommand => new AnotherCommandImplementation(ExecuteRunDialog);
-
-
+        SampleDialog view;
         private async void ExecuteRunDialog(object o)
         {
             //let's set up a little MVVM, cos that's what the cool kids are doing:
-            var view = new SampleDialog
+            view = new SampleDialog
             {
                 DataContext = new SampleDialogViewModel()
             };
@@ -32,7 +32,9 @@ namespace JobControlCenter.Domain
 
         private void ClosingEventHandler(object sender, DialogClosingEventArgs eventArgs)
         {
-            Console.WriteLine("You can intercept the closing event, and cancel here.");
+            if (!Equals(eventArgs.Parameter, true)) return;
+
+            view.AddSandbox();
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
