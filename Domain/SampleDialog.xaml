@@ -8,18 +8,19 @@
              xmlns:domain="clr-namespace:JobControlCenter.Domain"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Margin="16">
+    <Grid Margin="16" Height="250" Width="400">
 
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock>New contact:</TextBlock>
+        <TextBlock>Enter new sandbox details</TextBlock>
         <TextBox wpf:HintAssist.Hint="Name" Style="{DynamicResource MaterialDesignFloatingHintTextBox}"                 
                  Margin="0 6 0 0"
-                 FontSize="18" Grid.Row="1">
+                 FontSize="16" Grid.Row="1">
             <TextBox.Text>
                 <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -28,11 +29,20 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox wpf:HintAssist.Hint="Number" Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
+        <TextBox wpf:HintAssist.Hint="Path" Style="{DynamicResource MaterialDesignFloatingHintTextBox}"
                  Margin="0 8 0 0"
-                 FontSize="16" Grid.Row="2"
-                 />
-        <StackPanel Orientation="Horizontal" Grid.Row="3"
+                 FontSize="12" Grid.Row="2">
+            <TextBox.Text>
+                <Binding Path="Path" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <domain:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <CheckBox Grid.Row="3" Margin="0 20 0 0" Style="{StaticResource MaterialDesignCheckBox}">Export restricted</CheckBox>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="4"
                     Margin="0 16 0 0">
             <Button IsDefault="True" Style="{DynamicResource MaterialDesignFlatButton}"
                     Command="{x:Static wpf:DialogHost.CloseDialogCommand}">

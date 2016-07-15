@@ -27,11 +27,7 @@ namespace JobControlCenter.Domain
             };
 
             //show the dialog
-            //var result = await DialogHost.Show(view, "RootDialog", ClosingEventHandler);
-
             var result = await DialogHost.Show(view, "RootDialog", ClosingEventHandler);
-            //check the result...
-          //  Console.WriteLine("Dialog was closed, the CommandParameter used to close it was: " + (result ?? "NULL"));
         }
 
         private void ClosingEventHandler(object sender, DialogClosingEventArgs eventArgs)

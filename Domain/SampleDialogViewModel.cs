@@ -7,6 +7,7 @@ namespace JobControlCenter.Domain
     public class SampleDialogViewModel : INotifyPropertyChanged
     {
         private string _name;
+        private string _path;
 
         public string Name
         {
@@ -14,6 +15,15 @@ namespace JobControlCenter.Domain
             set
             {
                 this.MutateVerbose(ref _name, value, RaisePropertyChanged());
+            }
+        }
+
+        public string Path
+        {
+            get { return _path; }
+            set
+            {
+                this.MutateVerbose(ref _path, value, RaisePropertyChanged());
             }
         }
 
