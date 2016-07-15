@@ -8,7 +8,8 @@
     xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
     xmlns:mahMaterialDragablzMashUp="clr-namespace:JobControlCenter"
     xmlns:dockablz="clr-namespace:Dragablz.Dockablz;assembly=Dragablz"
-    xmlns:domain="clr-namespace:JobControlCenter.Domain"
+    xmlns:domain="clr-namespace:MaterialDesignColors.WpfExample.Domain"
+    xmlns:domain1="clr-namespace:JobControlCenter.Domain"
     xmlns:system="clr-namespace:System;assembly=mscorlib"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     mc:Ignorable="d"
@@ -26,20 +27,22 @@
         </controls:FlyoutsControl>
     </controls:MetroWindow.Flyouts>
     <dockablz:Layout>
+        <materialDesign:DialogHost Identifier="RootDialog">
         <dragablz:TabablzControl BorderThickness="0"
                                  Margin="0,-1,0,1">
             <dragablz:TabablzControl.InterTabController>
                 <dragablz:InterTabController />
             </dragablz:TabablzControl.InterTabController>
             <TabItem Header="Tools">
-                <local:RTCSandboxOperations>
-                    <local:RTCSandboxOperations.DataContext>
-                        <domain:DialogsViewModel/>
-                    </local:RTCSandboxOperations.DataContext>
-                </local:RTCSandboxOperations>
+                <!--<domain:DemoItem.Content>-->
+                    <local:RTCSandboxOperations>
+                        <local:RTCSandboxOperations.DataContext>
+                            <domain1:DialogsViewModel />
+                        </local:RTCSandboxOperations.DataContext>
+                    </local:RTCSandboxOperations>
+                <!--</domain:DemoItem.Content>-->
             </TabItem>
-            
-            <TabItem Header="SW Launcher">
+            <TabItem Header="SW Launcher" >
                 <WrapPanel>
                     <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Height="40" Width="40">
                         <materialDesign:PackIcon Kind="PencilBoxOutline" Height="28" Width="28" />
@@ -88,6 +91,7 @@
                 </local:PaletteSelector>
             </TabItem>
         </dragablz:TabablzControl>
+        </materialDesign:DialogHost>
     </dockablz:Layout>
 
 </controls:MetroWindow>

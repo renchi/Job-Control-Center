@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using MaterialDesignColors.WpfExample.Domain;
 
 namespace JobControlCenter.Domain
 {

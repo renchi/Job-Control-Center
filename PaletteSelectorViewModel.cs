@@ -10,6 +10,7 @@ using System.Windows.Media;
 using JobControlCenter.Domain;
 using MaterialDesignThemes.Wpf;
 using MaterialDesignColors;
+using MaterialDesignColors.WpfExample.Domain;
 
 namespace JobControlCenter
 {

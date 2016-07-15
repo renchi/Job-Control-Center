@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Controls;
 
-namespace JobControlCenter.Domain
+namespace MaterialDesignColors.WpfExample.Domain
 {
     public class ListsAndGridsViewModel : INotifyPropertyChanged
     {

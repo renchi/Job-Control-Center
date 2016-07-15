@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 
 
-namespace JobControlCenter.Domain
+namespace MaterialDesignColors.WpfExample.Domain
 {
     
     public class SelectableViewModel : INotifyPropertyChanged

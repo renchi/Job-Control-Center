@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using JobControlCenter.Domain;
+using MaterialDesignColors.WpfExample.Domain;
 using MaterialDesignThemes.Wpf;
 
 
@@ -28,7 +28,8 @@ namespace JobControlCenter.Domain
 
             //show the dialog
             //var result = await DialogHost.Show(view, "RootDialog", ClosingEventHandler);
-            //var result = await DialogHost.Show(view, "RootDialog", ClosingEventHandler);
+
+            var result = await DialogHost.Show(view, "RootDialog", ClosingEventHandler);
             //check the result...
           //  Console.WriteLine("Dialog was closed, the CommandParameter used to close it was: " + (result ?? "NULL"));
         }

@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JobControlCenter.Domain
+namespace MaterialDesignColors.WpfExample.Domain
 {
     public class DemoItem : INotifyPropertyChanged
     {
