@@ -30,6 +30,20 @@ namespace JobControlCenter
         public RTCSandboxOperations()
         {
             InitializeComponent();
+            updateCombo();
+            foreach (SettingsProperty currentProperty in Properties.SWList.Default.Properties)
+            {
+                var key = currentProperty.Name;
+                var name = Properties.SWList.Default[key];
+
+                SWListCombo.Items.Add(key);
+            }
+            SWListCombo.SelectedIndex = 0;
+        }
+
+        private void updateCombo()
+        {
+            streamNameCombo.Items.Clear();
             userCfg = new UserConfiguration();
             try
             {
@@ -57,16 +71,11 @@ namespace JobControlCenter
                 Console.WriteLine("Error reading app settings");
             }
             streamNameCombo.SelectedIndex = 0;
+        }
 
-
-            foreach (SettingsProperty currentProperty in Properties.SWList.Default.Properties)
-            {
-                var key = currentProperty.Name;
-                var name = Properties.SWList.Default[key];
-
-                SWListCombo.Items.Add(key);
-            }
-            SWListCombo.SelectedIndex = 0;
+        private void UpdateSandboxList(object sender, RoutedEventArgs e)
+        {
+            updateCombo();
         }
 
         private void LaunchVS_OnClick(object sender, RoutedEventArgs e)
