@@ -33,7 +33,7 @@
             <dragablz:TabablzControl.InterTabController>
                 <dragablz:InterTabController />
             </dragablz:TabablzControl.InterTabController>
-            <TabItem Header="Tools">
+            <TabItem Header="Ramon">
                 <!--<domain:DemoItem.Content>-->
                     <local:RTCSandboxOperations>
                         <local:RTCSandboxOperations.DataContext>
@@ -42,9 +42,37 @@
                     </local:RTCSandboxOperations>
                 <!--</domain:DemoItem.Content>-->
             </TabItem>
-            <TabItem Header="SW Launcher" >
+            <TabItem Header="Tools" >
                 <WrapPanel>
-                    <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Height="40" Width="40">
+                        <materialDesign:Card Width="300" Margin="8 20 4 16" Height="160">
+                            <Grid VerticalAlignment="Stretch">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+
+                                <materialDesign:PackIcon Kind="ContactMail" Width="110" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="16 16 16 8">Get in touch</TextBlock>
+                                    <TextBlock TextWrapping="Wrap" Margin="16 0 16 8" Foreground="{DynamicResource MaterialDesignBodyLight}"
+                                           VerticalAlignment="Top">Say hello, propose new feature, report a bug.</TextBlock>
+                                    <Button Style="{DynamicResource MaterialDesignFlatButton}"
+                                            x:Name="EmailButton" Click="EmailButton_OnClick">
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="EmailOutline" />
+                                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Top">Email</TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+
+                    <!--<Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Height="40" Width="40">
                         <materialDesign:PackIcon Kind="PencilBoxOutline" Height="28" Width="28" />
                     </Button>
                     <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Height="40" Width="40">
@@ -79,7 +107,7 @@
                     </Button>
                     <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Height="40" Width="40">
                         <materialDesign:PackIcon Kind="Database" Height="28" Width="28" />
-                    </Button>
+                    </Button>-->
                 </WrapPanel>
                     
             </TabItem>

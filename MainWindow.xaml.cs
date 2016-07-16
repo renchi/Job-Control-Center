@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,10 @@ namespace JobControlCenter
         private void TabablzControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+        private void EmailButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Process.Start("mailto://chitoborabien@gmail.com");
         }
     }
 }
