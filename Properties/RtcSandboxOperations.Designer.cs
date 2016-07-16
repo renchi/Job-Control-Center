@@ -37,7 +37,7 @@ namespace JobControlCenter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\DotNet")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\chitoborabien")]
         public string Feature_Dev {
             get {
                 return ((string)(this["Feature_Dev"]));

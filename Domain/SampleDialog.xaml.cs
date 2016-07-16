@@ -38,34 +38,14 @@ namespace JobControlCenter.Domain
                 var mysandboxName = builder.ToString();
                 var mysandboxPath = txtSandboxPath.Text;
 
-                //SettingsProperty newProperty = new SettingsProperty(mysandboxName);
-                //newProperty.Name = mysandboxName;
-                //newProperty.PropertyType = string;
-                //newProperty.DefaultValue = mysandboxPath;
-                //// newProperty.Name = mysandboxName;
-                //Properties.RtcSandboxOperations.Default.Properties.Add(newProperty);
-                //Properties.RtcSandboxOperations.Default.Save();
+                var userCfg = new UserConfiguration();
+                var key = new StringBuilder("#rtcsandbox#");
+                key.Append(mysandboxName);
+                var value = mysandboxPath;
+                userCfg.AddUpdateAppSettings(key.ToString(), mysandboxPath);
 
-
-                System.Configuration.SettingsProperty property = new SettingsProperty(mysandboxName);
-                property.DefaultValue = mysandboxPath;
-                property.IsReadOnly = false;
-                property.PropertyType = typeof(string);
-                property.Provider = Properties.Settings.Default.Providers["LocalFileSettingsProvider"];
-                property.Attributes.Add(typeof(System.Configuration.UserScopedSettingAttribute), new System.Configuration.UserScopedSettingAttribute());
-                Properties.RtcSandboxOperations.Default.Properties.Add(property);
-                Properties.RtcSandboxOperations.Default.Save();
-                Properties.RtcSandboxOperations.Default.Reload();
-                Properties.RtcSandboxOperations.Default.Upgrade();
-
-                foreach (SettingsProperty currentProperty in Properties.RtcSandboxOperations.Default.Properties)
-                {
-                    var key = currentProperty.Name;
-                    var name = currentProperty.DefaultValue;
-                }
                 //System.Windows.Application.Current.Shutdown();
                 //System.Windows.Forms.Application.Restart();
-
             }
         }
     }

@@ -19,7 +19,7 @@ namespace JobControlCenter
 
         public UserConfiguration()
         {
-            ReadAllSettingsByKind(SettingsKind.eRtcSandboxOperation);
+            //ReadAllSettingsByKind(SettingsKind.eRtcSandboxOperation);
             //ReadAllSettings();
             //ReadSetting("Setting1");
             //ReadSetting("NotValid");
@@ -73,7 +73,7 @@ namespace JobControlCenter
             }
         }
 
-        private string ReadSetting(string key)
+        public string ReadSetting(string key)
         {
             string result = "";
             try
@@ -89,7 +89,7 @@ namespace JobControlCenter
             return result;
         }
 
-        private void AddUpdateAppSettings(string key, string value)
+        public void AddUpdateAppSettings(string key, string value)
         {
             try
             {

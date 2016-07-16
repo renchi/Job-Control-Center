@@ -26,17 +26,35 @@ namespace JobControlCenter
     /// </summary>
     public partial class RTCSandboxOperations : UserControl
     {
+        private UserConfiguration userCfg;
         public RTCSandboxOperations()
         {
             InitializeComponent();
-            //new UserConfiguration();
-            
-            foreach (SettingsProperty currentProperty in Properties.RtcSandboxOperations.Default.Properties)
+            userCfg = new UserConfiguration();
+            try
             {
-                var key = currentProperty.Name;
-                var name = Properties.RtcSandboxOperations.Default[key];
+                var appSettings = ConfigurationManager.AppSettings;
 
-                streamNameCombo.Items.Add(key);
+                if (appSettings.Count == 0)
+                {
+                    Console.WriteLine("AppSettings is empty.");
+                }
+                else
+                {
+                    foreach (var key in appSettings.AllKeys)
+                    {
+                        if (key.Contains("#rtcsandbox#"))
+                        {
+                            var sandboxName = key.Replace("#rtcsandbox#", "");
+                            streamNameCombo.Items.Add(sandboxName);
+                        }
+                        Console.WriteLine("Key: {0} Value: {1}", key, appSettings[key]);
+                    }
+                }
+            }
+            catch (ConfigurationErrorsException)
+            {
+                Console.WriteLine("Error reading app settings");
             }
             streamNameCombo.SelectedIndex = 0;
 
@@ -54,11 +72,13 @@ namespace JobControlCenter
         private void LaunchVS_OnClick(object sender, RoutedEventArgs e)
         {
             var selectedStream = streamNameCombo.SelectedItem.ToString();
-            var pathName = Properties.RtcSandboxOperations.Default[selectedStream];
+            var key = new StringBuilder("#rtcsandbox#");
+            key.Append(selectedStream);
+            var pathName = userCfg.ReadSetting(key.ToString());
 
+            
         }
-
-
+       
         private void PopupBox_OnOpened(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("Just making sure the popup has opened.");

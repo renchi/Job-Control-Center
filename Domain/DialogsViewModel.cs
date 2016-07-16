@@ -35,6 +35,7 @@ namespace JobControlCenter.Domain
             if (!Equals(eventArgs.Parameter, true)) return;
 
             view.AddSandbox();
+            
         }
         public event PropertyChangedEventHandler PropertyChanged;
 

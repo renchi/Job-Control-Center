@@ -6,7 +6,7 @@
       <Value Profile="(Default)">C:\MetroTest</Value>
     </Setting>
     <Setting Name="Feature_Dev" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\DotNet</Value>
+      <Value Profile="(Default)">C:\Users\chitoborabien</Value>
     </Setting>
   </Settings>
 </SettingsFile>
