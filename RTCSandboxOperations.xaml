@@ -38,7 +38,8 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <WrapPanel Margin="20 20 0 0" ItemWidth="240">
+            <StackPanel>
+                <WrapPanel Margin="20 20 0 0" ItemWidth="240">
                 <materialDesign:Card Margin="4 4 0 0" BorderThickness="50" Height="150">
                     <WrapPanel>
                         <StackPanel Margin="4 4 8 0" >
@@ -118,7 +119,7 @@
                             <materialDesign:Card Margin="4 4 0 0" Background="{DynamicResource PrimaryHueDarkBrush}"
                                             Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                                             Padding="3" UniformCornerRadius="6">
-                                <TextBlock TextWrapping="Wrap">Launch or Quit SW</TextBlock>
+                                <TextBlock TextWrapping="Wrap">Run or Quit SW</TextBlock>
                             </materialDesign:Card>
                             <TextBlock Margin="7 4 0 0" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
                             <WrapPanel>
@@ -160,7 +161,36 @@
                         </Button>
                     </WrapPanel>
                 </materialDesign:Card>
-            </WrapPanel>
+                </WrapPanel>
+                <WrapPanel Margin="20 20 0 0" ItemWidth="240">
+                    <materialDesign:Card Margin="4 4 0 0" BorderThickness="50" Height="150">
+                        <WrapPanel>
+                            <StackPanel Margin="4 4 8 0" >
+                                <materialDesign:Card Margin="4 4 0 0" Background="{DynamicResource PrimaryHueDarkBrush}"
+                                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                                            Padding="3" UniformCornerRadius="6">
+                                    <TextBlock TextWrapping="Wrap">PR100 antenna simulation</TextBlock>
+                                </materialDesign:Card>
+                                <TextBlock Margin="7 4 0 0" TextWrapping="Wrap" VerticalAlignment="Center">Launch ruby antenna simulation:</TextBlock>
+                                <WrapPanel Margin="20 20 0 0">
+                                    <ComboBox Width="120" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                                        <ComboBoxItem IsSelected="True">ADD107</ComboBoxItem>
+                                        <ComboBoxItem>ADD207</ComboBoxItem>
+                                        <ComboBoxItem>HE300</ComboBoxItem>
+                                        <ComboBoxItem>HE300L</ComboBoxItem>
+                                        <ComboBoxItem>NMEA compass</ComboBoxItem>
+                                    </ComboBox>
+                                    <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                                                Margin="22 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                Height="40" Width="40" ToolTip="Run antenna simulation">
+                                        <materialDesign:PackIcon Kind="SignalVariant" Height="28" Width="28" />
+                                    </Button>
+                                </WrapPanel>
+                            </StackPanel>
+                        </WrapPanel>
+                    </materialDesign:Card>
+                </WrapPanel>
+            </StackPanel>
         </Grid>
         <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}"
                                  HorizontalAlignment="Right" VerticalAlignment="Bottom"
