@@ -119,7 +119,7 @@
                             <materialDesign:Card Margin="4 4 0 0" Background="{DynamicResource PrimaryHueDarkBrush}"
                                             Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                                             Padding="3" UniformCornerRadius="6">
-                                <TextBlock TextWrapping="Wrap">Run or Quit SW</TextBlock>
+                                <TextBlock TextWrapping="Wrap">Launch or Quit SW</TextBlock>
                             </materialDesign:Card>
                             <TextBlock Margin="7 4 0 0" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
                             <WrapPanel>
@@ -135,7 +135,7 @@
                                                 Margin="30 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                 Height="40" Width="40"
                                                 ToolTip="Launch SW">
-                                    <materialDesign:PackIcon Kind="Run" Height="28" Width="28" />
+                                    <materialDesign:PackIcon Kind="Launch" Height="28" Width="28" />
                                 </Button>
 
                             </WrapPanel>
@@ -151,7 +151,7 @@
                                             Padding="3" UniformCornerRadius="6">
                                 <TextBlock TextWrapping="Wrap">P Studio</TextBlock>
                             </materialDesign:Card>
-                            <TextBlock Margin="7 4 0 15" TextWrapping="Wrap" VerticalAlignment="Center">Sign the xxxxx</TextBlock>
+                            <TextBlock Margin="7 4 0 15" TextWrapping="Wrap" VerticalAlignment="Center">Sign the xxx.xml</TextBlock>
                         </StackPanel>
                         <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
                                         Margin="30 0 0 0" HorizontalAlignment="Center"
@@ -171,7 +171,7 @@
                                             Padding="3" UniformCornerRadius="6">
                                     <TextBlock TextWrapping="Wrap">PR100 antenna simulation</TextBlock>
                                 </materialDesign:Card>
-                                <TextBlock Margin="7 4 0 0" TextWrapping="Wrap" VerticalAlignment="Center">Launch ruby antenna simulation:</TextBlock>
+                                <TextBlock Margin="7 14 0 0" TextWrapping="Wrap" VerticalAlignment="Center">Run ruby antenna simulation:</TextBlock>
                                 <WrapPanel Margin="20 20 0 0">
                                     <ComboBox Width="120" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                                         <ComboBoxItem IsSelected="True">ADD107</ComboBoxItem>
